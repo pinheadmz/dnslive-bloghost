@@ -36,7 +36,7 @@ let argc = process.argv.length;
         address=result.address
         result = await client.execute('signmessage', [address, data]);
 
-        request.post('https://dns.live/webhost',{form:{zone: domain, data: data, sig: result}}, function(err,res,body) {
+        request.post('https://dns.live/blogpost',{form:{zone: domain, data: data, sig: result}}, function(err,res,body) {
           if(body.includes('?'))
             console.log("Error occurred: "+body);
           else {

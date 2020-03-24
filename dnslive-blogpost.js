@@ -12,7 +12,7 @@ else {
   let data = Buffer.from(fs.readFileSync(argv[3])).toString('base64');
   let sig = argv[4];
 
-  request.post('https://dns.live/bloghost',{form:{zone: domain, data: data, sig: sig}}, function(err,res,body) {
+  request.post('https://dns.live/blogpost',{form:{zone: domain, data: data, sig: sig}}, function(err,res,body) {
     if(body.includes('?'))
       console.log("Error occurred: "+body);
     else {
