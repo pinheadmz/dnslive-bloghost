@@ -6,7 +6,7 @@ Simply provide a signature of the file you wish to upload signed by the address 
 ```
 git clone https://github.com/dnslive/dnslive-bloghost
 cd dnslive-bloghost
-npm install request hs-client hsd
+npm install request hs-client hsd saltshaker-crypto
 ```
 Note: You do not need hsd and hs-client if you are running it manually (not -easy).
 
