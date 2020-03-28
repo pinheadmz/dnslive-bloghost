@@ -19,6 +19,20 @@ For example, if I have post.txt, with a domain like "mysite" and apikey "asdfasd
 node dnslive-bloghost-easy.js mysite post.txt asdfasdf
 ```
 
+### Namebase Mode / Non HNS Key Method (Easier)
+1. Create keys
+```
+node dnslive-bloghost-alt.js create
+```
+2. Add keys to your root zone's TXT record
+```
+domain. IN TXT "nacl=SOMEKEY"
+```
+3. Post
+```
+node dnslive-bloghost-easy-alt.js domain file.txt
+```
+
 ### Example of full commands to get up and going manually (assumes [Bob Wallet by Kyokan](https://github.com/kyokan/bob-wallet))
 1. Copy the address that owns the domain to a temporary textfile/notepad.
 2. Get your API key from Bob Wallet  (Settings -> copy HSD API Key to a temporary textfile/notepad)
