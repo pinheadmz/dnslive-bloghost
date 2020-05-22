@@ -1,0 +1,24 @@
+{
+  "name": "dnslive-bloghost",
+  "version": "1.0.0",
+  "description": "Simply provide a signature of the file you wish to upload signed by the address associated with your domain/tld.",
+  "main": "/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnslive/dnslive-bloghost.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dnslive/dnslive-bloghost/issues"
+  },
+  "homepage": "https://github.com/dnslive/dnslive-bloghost#readme",
+  "dependencies": {
+    "hs-client": "0.0.8",
+    "request": "^2.88.2",
+    "saltshaker-crypto": "^1.0.7"
+  }
+}

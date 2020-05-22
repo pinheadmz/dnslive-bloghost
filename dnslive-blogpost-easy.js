@@ -1,6 +1,4 @@
 const {WalletClient} = require('hs-client');
-const {Network} = require('hsd');
-const network = Network.get('main');
 
 const request = require('request');
 const fs = require('fs');
@@ -18,8 +16,8 @@ let argc = process.argv.length;
     let data = Buffer.from(fs.readFileSync(argv[3])).toString('base64');
 
     const walletOptions = {
-      network: network.type,
-      port: network.walletPort,
+      network: 'main',
+      port: 12039,
       apiKey: argv[4]
     }
 
