@@ -22,15 +22,16 @@ let argc = process.argv.length;
     }
 
     const client = new WalletClient(walletOptions);
+    await client.execute('selectwallet', [ wallet ]);
     const wclient = client.wallet(wallet);
 
     if(argc==6)
       wallet=argv[5];
 
-    result = await client.execute('getnameinfo', [ domain ]);
+    let result = await client.execute('getnameinfo', [ domain ]);
     if(result && result.owner.hash) {
       result = await wclient.getCoin(result.owner.hash, result.owner.index);
-      if(result.address) {
+      if(result && result.address) {
         address=result.address
         result = await client.execute('signmessage', [address, data]);
 
@@ -41,7 +42,11 @@ let argc = process.argv.length;
             console.log("Blog Posted!");
           }
         });
+      } else {
+        console.error('Wallet does not own name')
       }
+    } else {
+      console.log('Could not find name')
     }
   }
 })();
